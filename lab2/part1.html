@@ -21,9 +21,15 @@
 			document.body.appendChild(renderer.domElement);
 
 			var geometry = new THREE.BoxGeometry();
+			var geometry2 = new THREE.BoxGeometry(2, 4, 2);
 			var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+			var material2 = new THREE.MeshBasicMaterial( {color: 0x006946} );
 			var cube = new THREE.Mesh(geometry, material);
 			scene.add(cube);
+
+			var cube2 = new THREE.Mesh(geometry2, material2);
+			scene.add(cube2);
+
 			camera.position.z = 5; //this moves the camera towards the viewer
 
 			function animate() {
