@@ -15,5 +15,3 @@ LAB3
 ______________________________________________________
 
 LINK: https://drive.google.com/file/d/1l4LvTCWn5QJcAyDzdOpuMqMnqjbkG39c/view?usp=sharing
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
