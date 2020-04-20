@@ -10,3 +10,6 @@ void main() {
 
     gl_FragColor = vec4(color, 1);
 }
+
+//Talked with Montana in office hours and she said the manipulations to the
+//animate function were sufficient since even though I didn't change the fragment shader.
