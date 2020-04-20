@@ -25,22 +25,206 @@ var geometry = new THREE.BoxGeometry();
 var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,
 specular: 0x00ff00, shininess: 30 });
 
+var geometry2 = new THREE.BoxGeometry(1,1,1);
+var material2 = new THREE.MeshLambertMaterial( {color: 0x9ea832, opacity: 90, reflectivity: 50, wireframe: false});
+
       			var cube = new THREE.Mesh( geometry, material );
      			scene.add(cube);
+          var cube2 = new THREE.Mesh( geometry2, material2 );
+        scene.add(cube2);
 
 			// add the light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
 			light.position.set(10, 10, 10);
 			scene.add(light);
 
-			function animate() {
-				requestAnimationFrame(animate);
-				geometry.rotateX(0.01);
-				geometry.rotateY(0.01);
-				renderer.render(scene, camera);
-			}
-			animate();
+      geometry2.translate(2, 2, 1)
 
+      THREE.Cache.enabled = true;
+      var count = 0;
+      var loader = new THREE.FileLoader();
+      var fshader, vshader;
+
+      loader.load('shaders/vertexShader.vert',
+// onLoad callback
+	function (data) {
+			console.log(data); // output the text to the console
+			vshader = data;
+			count += 1;
+			addCoolCube(); // we will write this method
+		},
+// onProgress callback
+	function (xhr) {
+		console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+	},
+// onError callback
+	function (err) {
+		console.error('An error happened');
+	});
+
+
+  loader.load('shaders/fragmentShader.frag',
+  // onLoad callback
+  	function (data) {
+  			console.log(data); // output the text to the console
+  			fshader = data;
+  			count += 1;
+  			addCoolCube(); // we will write this method
+  		},
+  // onProgress callback
+  	function (xhr) {
+  		console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+  	},
+  // onError callback
+  	function (err) {
+  		console.error('An error happened');
+  	});
+
+    var geometry1, material1, mesh1;
+
+    	function addCoolCube() {
+    		if(count == 2) {
+          let uniforms = {
+		colorB: {type: 'vec3', value: new
+THREE.Color(0xACB6E5)},
+		colorA: {type: 'vec3', value: new
+THREE.Color(0x74ebd5)}
+	 };
+
+    			geometry1 = new THREE.BoxGeometry(1, 1, 1);
+    		material1 =  new THREE.ShaderMaterial({uniforms: uniforms,
+    				fragmentShader: fshader,
+    vertexShader: vshader,
+    				precision: "mediump"});
+
+    		mesh1 = new THREE.Mesh(geometry1, material1);
+    		mesh1.position.x = 2;
+    		scene.add(mesh1);
+    	}
+    }
+
+
+
+
+
+    var count1 = 0;
+    var fs, vs;
+
+    loader.load('shaders/v1.vert',
+// onLoad callback
+function (data) {
+    console.log(data); // output the text to the console
+    vs = data;
+    count1 += 1;
+    addCoolestCube(); // we will write this method
+  },
+// onProgress callback
+function (xhr) {
+  console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+},
+// onError callback
+function (err) {
+  console.error('An error happened');
+});
+
+
+loader.load('shaders/f1.frag',
+// onLoad callback
+  function (data) {
+      console.log(data); // output the text to the console
+      fs = data;
+      count1 += 1;
+      addCoolestCube(); // we will write this method
+    },
+// onProgress callback
+  function (xhr) {
+    console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+  },
+// onError callback
+  function (err) {
+    console.error('An error happened');
+  });
+
+  var geometry3, material3, mesh3;
+
+    function addCoolestCube() {
+      if(count1 == 2) {
+        let uniforms2 = {
+  colorB: {type: 'vec3', value: new
+THREE.Color(0x000000)},
+  colorA: {type: 'vec3', value: new
+THREE.Color(0x000000)}
+ };
+
+        geometry3 = new THREE.BoxGeometry(1, 1, 1);
+      material3 =  new THREE.ShaderMaterial({uniforms: uniforms2,
+          fragmentShader: fs,
+  vertexShader: vs,
+          precision: "mediump"});
+
+      mesh3 = new THREE.Mesh(geometry3, material3);
+      mesh3.position.x = -2;
+      scene.add(mesh3);
+      console.log(mesh3); // Used to find path for color manipulation
+    }
+  }
+  var count4 = 0;
+  var count5 = 0;
+  var count6 = 1;
+  var swit = 1;
+
+	
+	function animate() {
+		requestAnimationFrame(animate);
+		geometry.rotateX(0.01);
+		geometry.rotateY(0.01);
+
+		if(geometry1) {
+			geometry1.rotateX(0.01);
+			geometry1.rotateY(0.01);
+		}
+
+		if(geometry3) {
+			geometry3.rotateX(0.01);
+			geometry3.rotateY(0.01);
+// if(count4%100 == 0){
+//     mesh3.material.wireframe = !mesh3.material.wireframe;
+//   //   //mesh3.material.wireframe = !mesh3.material.wireframe;
+//   //   mesh3.material.uniforms.colorA.value.r = ((Math.random() * 1000)/ 1000);
+//   //   mesh3.material.uniforms.colorA.value.g = ((Math.random() * 1000)/ 1000);
+//   //   mesh3.material.uniforms.colorA.value.b = ((Math.random() * 1000)/ 1000);
+//  }
+  // if(count4%50 == 0){
+  //   //mesh3.material.wireframe = !mesh3.material.wireframe;
+  //   mesh3.material.uniforms.colorB.value.r = ((Math.random() * 1000)/ 1000);
+  //   mesh3.material.uniforms.colorB.value.g = ((Math.random() * 1000)/ 1000);
+  //   mesh3.material.uniforms.colorB.value.b = ((Math.random() * 1000)/ 1000);
+  // }
+	  if(count4%1 == 0){
+	    if(count5 >= 1)
+	    {
+	      swit = -1;
+	    }
+	    else if (count5 <= 0)
+	    {
+	        swit = 1;
+	    }
+	    count5 += 0.001 * swit;
+	    count6 -= 0.001 * swit;
+	    mesh3.material.uniforms.colorA.value.r = count6;
+	    mesh3.material.uniforms.colorA.value.g = count6;
+	    mesh3.material.uniforms.colorA.value.b = count5;
+
+			mesh3.material.uniforms.colorB.value.r = count6;
+		  mesh3.material.uniforms.colorB.value.g = count5;
+		  mesh3.material.uniforms.colorB.value.b = count6;
+	  }
+		}
+	  geometry2.rotateY(0.01);
+		renderer.render(scene, camera);
+	  count4 = count4 + 1;
+		}
+		animate();
 
 		</script>
 	</body>
