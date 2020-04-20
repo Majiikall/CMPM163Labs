@@ -15,3 +15,8 @@ LAB3
 ______________________________________________________
 
 LINK: https://drive.google.com/file/d/1l4LvTCWn5QJcAyDzdOpuMqMnqjbkG39c/view?usp=sharing
+
+The Cube on the left I changed by taking the input values for the fragment shader and updating them in animate()
+to create a gradient effect that would constantly update the colors in a unique way. 
+The cube in the middle is the initial cube created in the lab using the Phong Material. The right cube is the first
+cube made with the original shader from the lab. The top cube is made using the Lambert Material.
