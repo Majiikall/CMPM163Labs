@@ -14,18 +14,34 @@
      // setup the scene
            var scene = new THREE.Scene();
            var camera = new THREE.PerspectiveCamera(75,
-window.innerWidth/window.innerHeight, 0.1, 1000);
+              window.innerWidth/window.innerHeight, 0.1, 1000);
            var renderer = new THREE.WebGLRenderer();
            renderer.setSize(window.innerWidth, window.innerHeight);
            document.body.appendChild(renderer.domElement);
      camera.position.z = 5;
 
      // setup the cube
-var geometry = new THREE.BoxGeometry();
-var texture = THREE.ImageUtils.loadTexture("156.jpg");
-           var material = new THREE.MeshPhongMaterial( { map: texture } );
-           var cube = new THREE.Mesh(geometry, material);
-         scene.add(cube);
+      var geometry = new THREE.BoxGeometry();
+      var texture = THREE.ImageUtils.loadTexture("156.jpg");
+      var normMap = THREE.ImageUtils.loadTexture("156_norm.jpg");
+      var material = new THREE.MeshPhongMaterial({map: texture, normalMap: normMap});
+
+      var cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      material = new THREE.MeshPhongMaterial( { map: texture });
+
+      var cube2 = new THREE.Mesh(geometry, material);
+       scene.add(cube2);
+       cube2.position.x -= 2;
+
+       var texture2 = THREE.ImageUtils.loadTexture("173b.jpg");
+       var normMap2 = THREE.ImageUtils.loadTexture("173_norm.jpg");
+       var material2 = new THREE.MeshPhongMaterial({map: texture2, normalMap: normMap2});
+
+       var cube3 = new THREE.Mesh(geometry, material2);
+        scene.add(cube3);
+        cube3.position.x += 2;
 
      // add the light
      var light = new THREE.PointLight(0xffffff, 1, 1000);
@@ -35,6 +51,7 @@ var texture = THREE.ImageUtils.loadTexture("156.jpg");
 
      var light_move = 5;
      var check = 1;
+     var count = 10;
      function animate() {
        requestAnimationFrame(animate);
        renderer.render(scene, camera);
@@ -45,19 +62,12 @@ var texture = THREE.ImageUtils.loadTexture("156.jpg");
        else if (light_move >= 6)
        {
          check = 1;
-         console.log("hi");
        }
        light.position.x = light_move*(-1);
        light.position.y = light_move;
-       if(check == 1)
-       {
-         light.position.z = check;
-       }
-       else
-       {
-         light.position.z = 0.95;
-       }
+       light.position.z = count;
 
+       count -= 0.075 * check;
        light_move -= 0.1 * check;
 
      }
