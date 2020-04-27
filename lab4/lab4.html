@@ -51,7 +51,49 @@
 
      var light_move = 5;
      var check = 1;
-     var count = 10;
+     var count1 = 10;
+
+
+     THREE.Cache.enabled = true;
+      var count = 0;
+      var loader = new THREE.FileLoader();
+      var fshader, vshader;
+
+      	loader.load('shaders/vertexShader.vert',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			vshader = data;
+      			count += 1;
+      			//addTextureShaderCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+     		// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+        loader.load('shaders/fragmentShader.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			fshader = data;
+      			count += 1;
+      			//addTextureShaderCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+        // onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+
      function animate() {
        requestAnimationFrame(animate);
        renderer.render(scene, camera);
@@ -65,9 +107,9 @@
        }
        light.position.x = light_move*(-1);
        light.position.y = light_move;
-       light.position.z = count;
+       light.position.z = count1;
 
-       count -= 0.075 * check;
+       count1 -= 0.075 * check;
        light_move -= 0.1 * check;
 
      }
