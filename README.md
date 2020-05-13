@@ -45,3 +45,14 @@ _____________________________________________________
 LINK: https://drive.google.com/file/d/1gn6xCDIBWN1ZxIlSILjKwyOYcKIaEUeI/view?usp=sharing
 
 In this section of the Lab I did the section related to Unity. For this I added some new features to the cart game. I changed the material of the driver to be something checkered and different from the original. I manipulated the material of the track as well, adding rainbow sections, jumps, lap checkpoints and bowling pin obstacles. I also added two particle emitters to the cart for added effects. Next I changed the skybox and the light gradient and then added a spotlight above the cart to see the driver better. Finally, I added a celebration for the finish and start of the race that is triggered when passing through a trigger. 
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+LAB6
+_____________________________________________________
+
+![](lab6%media/Lab6%SC)
+
+Link to my shader with circle effect and everyline commented: https://www.shadertoy.com/view/3sSfRR
+
+Link to a cool project: 
