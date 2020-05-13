@@ -51,7 +51,7 @@ In this section of the Lab I did the section related to Unity. For this I added 
 LAB6
 _____________________________________________________
 
-![](lab6%media/Lab6%SC)
+![](lab6%media/Lab6%SC.png)
 
 Link to my shader with circle effect and everyline commented: https://www.shadertoy.com/view/3sSfRR
 
