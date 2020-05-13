@@ -55,4 +55,4 @@ _____________________________________________________
 
 Link to my shader with circle effect and everyline commented: https://www.shadertoy.com/view/3sSfRR
 
-Link to a cool project: 
+Link to a cool project: https://www.shadertoy.com/view/ls3BDH
