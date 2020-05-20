@@ -56,3 +56,12 @@ _____________________________________________________
 Link to my shader with circle effect and everyline commented: https://www.shadertoy.com/view/3sSfRR
 
 Link to a cool project: https://www.shadertoy.com/view/ls3BDH
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+LAB7
+______________________________________________________
+
+Link: https://drive.google.com/file/d/1Knk7g9kL2n_cv1S2vSnQAnai7F_2c3kO/view?usp=sharing
+
+For this part of the lab I used two planes to create snow covered mountains for the mountain range. Next I created the wave below the mountains to make it look like it could be an alpine lake. Finally, I wrote a short script to move some of the spheres created in the first tutorial to make them function as clouds for the project. 
