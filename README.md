@@ -67,3 +67,19 @@ Link: https://drive.google.com/file/d/1Knk7g9kL2n_cv1S2vSnQAnai7F_2c3kO/view?usp
 For this part of the lab I used two planes to create snow covered mountains for the mountain range. Next I created the wave below the mountains to make it look like it could be an alpine lake. Finally, I wrote a short script to move some of the spheres created in the first tutorial to make them function as clouds for the project. 
 
 For the partner check in I was unable to contact them.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+LAB8
+______________________________________________________
+Here is the screenshot from finishing the tutorial in UNITY for the lab
+![](lab8/lab8%20SC.png)
+
+Below is the image I drew inspiration from for this project:
+![](lab8/MSM.jpg)
+
+Here is the link to my final procedurally generated city for the lab: https://drive.google.com/file/d/1gC3L4VbTX5Q8xWLRPKLlUq_j3xirHo0F/view?usp=sharing
+
+For this portion where I added my own parts I first created an ocean to mimic an island. This ocean was using textures from the asset store and then I added a dirt feature that would appear under the city since the buildings can't float. Next I added a feature to the code that tiers the placement of the procedurally generated city to make it look like it's on a hill. This was to mimic Mont Saint-Michel from my inspiration. Finally, I added a church to the top of the island to top it off.
+
+My partner and I did not work together and we did not share answers to the questions. When I was contacted they were already finished and I was not close to completing the lab. 
