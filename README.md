@@ -83,3 +83,15 @@ Here is the link to my final procedurally generated city for the lab: https://dr
 For this portion where I added my own parts I first created an ocean to mimic an island. This ocean was using textures from the asset store and then I added a dirt feature that would appear under the city since the buildings can't float. Next I added a feature to the code that tiers the placement of the procedurally generated city to make it look like it's on a hill. This was to mimic Mont Saint-Michel from my inspiration. Finally, I added a church to the top of the island to top it off.
 
 My partner and I did not work together and we did not share answers to the questions. When I was contacted they were already finished and I was not close to completing the lab. 
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+LAB9
+_______________________________________________________
+Here is the screnshot from after finishing the L-Systems tutorial on youtube:
+![](lab9/Screenshot1.png)
+
+Here is the screenshot from after my own L-System:
+![](lab9/Screenshot2.png)
+
+For this part of the Lab I decided I wanted to do something cool with the angles and algorithm setup to make a unique twist on a commonly seen shape. I went with a circle and have dubbed it the "Offcenter slinky circle thing". The rules I used had stops in the algorithm to control flow of the drawing using the X and Y. The other features in the new rule set include drawing denotations and movements at a large angle to help simulate the circle using long lines that increment slowly. I think it has turned out better than I was expecting since the "double" circle look makes it feel like it could be 3D adding an extra cool twist to it.
